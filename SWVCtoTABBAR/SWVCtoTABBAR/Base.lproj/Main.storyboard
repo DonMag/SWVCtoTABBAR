@@ -28,10 +28,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Weyand" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8P-8T-qY3">
-                                <rect key="frame" x="151" y="111" width="73" height="30"/>
+                                <rect key="frame" x="67.5" y="111" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="gN4-zB-Qyb"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="NameTextEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="KwD-dG-jFx"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUf-Cc-6w7">
                                 <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
@@ -58,6 +64,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137" y="284"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Z3u-NB-hhk">
+            <objects>
+                <tabBarController storyboardIdentifier="SBTabBar" id="fBp-jy-8NF" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WJZ-8y-812">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dtu-Uv-gJl" kind="relationship" relationship="viewControllers" id="gDc-Dg-JBK"/>
+                        <segue destination="QqH-ZY-Swh" kind="relationship" relationship="viewControllers" id="aOk-Ba-fdU"/>
+                        <segue destination="7Zp-rb-hXs" kind="relationship" relationship="viewControllers" id="kOB-fV-ZsO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9S-3I-WiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="996"/>
         </scene>
         <!--VC 1-->
         <scene sceneID="tNC-uX-4ta">
@@ -92,13 +118,14 @@
                             <constraint firstItem="RmS-b9-i2U" firstAttribute="top" secondItem="jde-AN-9iH" secondAttribute="bottom" constant="75" id="wjk-OR-h3H"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="SB VC 1" id="wBO-t4-gUV"/>
                     <connections>
                         <outlet property="UserName" destination="RmS-b9-i2U" id="kuE-aO-MBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Oa-nf-RmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="118"/>
+            <point key="canvasLocation" x="906" y="663"/>
         </scene>
         <!--VC 2-->
         <scene sceneID="SI9-D3-2Ix">
@@ -125,10 +152,11 @@
                             <constraint firstItem="WLd-0p-XmY" firstAttribute="centerX" secondItem="rr3-wp-isQ" secondAttribute="centerX" id="wUA-xR-wrZ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="SB VC 2" id="d1i-z6-P3k"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQM-7B-T9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="118"/>
+            <point key="canvasLocation" x="1569" y="663"/>
         </scene>
         <!--VC 3-->
         <scene sceneID="Teq-bO-Tj0">
@@ -155,10 +183,11 @@
                             <constraint firstItem="aZf-LC-tdx" firstAttribute="centerY" secondItem="gLK-vQ-TMg" secondAttribute="centerY" id="fyF-w0-4FX"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="SB VC 3" id="a16-be-94m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFb-pU-FFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="119"/>
+            <point key="canvasLocation" x="2207" y="663"/>
         </scene>
     </scenes>
 </document>

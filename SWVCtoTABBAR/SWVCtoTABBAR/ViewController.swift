@@ -33,17 +33,36 @@ class ViewControllerEntry: UIViewController, UITextFieldDelegate {
 				
 				let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 				
-				let vc1 = storyBoard.instantiateViewController(withIdentifier: "ViewController1") as! ViewController1
-				let vc2 = storyBoard.instantiateViewController(withIdentifier: "ViewController2") as! ViewController2
-				let vc3 = storyBoard.instantiateViewController(withIdentifier: "ViewController3") as! ViewController3
-
-				vc1.stringPassed = NameLabel.text!
+				if 1 == 2 {
+					
+					// load ViewControllers and add them to a programmatically created UITabBarController
 				
-				let tabBarVC = UITabBarController()
-				tabBarVC.setViewControllers([vc1, vc2, vc3], animated: false)
-				
-				let appDelegate = UIApplication.shared.delegate as! AppDelegate
-				appDelegate.window?.rootViewController = tabBarVC
+					let vc1 = storyBoard.instantiateViewController(withIdentifier: "ViewController1") as! ViewController1
+					let vc2 = storyBoard.instantiateViewController(withIdentifier: "ViewController2") as! ViewController2
+					let vc3 = storyBoard.instantiateViewController(withIdentifier: "ViewController3") as! ViewController3
+					
+					vc1.stringPassed = NameLabel.text!
+					
+					let tabBarVC = UITabBarController()
+					tabBarVC.setViewControllers([vc1, vc2, vc3], animated: false)
+					
+					let appDelegate = UIApplication.shared.delegate as! AppDelegate
+					appDelegate.window?.rootViewController = tabBarVC
+					
+				} else {
+					
+					// load a Storyboard created UITabBarController
+					
+					let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "SBTabBar") as! UITabBarController
+					
+					if let vc1 = tabBarVC.viewControllers?.first as? ViewController1 {
+						vc1.stringPassed = NameLabel.text!
+					}
+					
+					let appDelegate = UIApplication.shared.delegate as! AppDelegate
+					appDelegate.window?.rootViewController = tabBarVC
+					
+				}
 				
 			}
 		}
@@ -81,7 +100,7 @@ class ViewController1: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated) // No need for semicolon
-		UserName.text = stringPassed ?? "No string passed"
+		UserName.text = stringPassed
 	}
 	
 	override func viewDidLoad() {
