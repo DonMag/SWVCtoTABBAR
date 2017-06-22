@@ -55,6 +55,7 @@ class ViewControllerEntry: UIViewController, UITextFieldDelegate {
 					
 					let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "SBTabBar") as! UITabBarController
 					
+					// get a reference to the ViewController in the first Tab position
 					if let vc1 = tabBarVC.viewControllers?.first as? ViewController1 {
 						vc1.stringPassed = NameLabel.text!
 					}
